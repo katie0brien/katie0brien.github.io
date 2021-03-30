@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>S6 | Final</title>
+ <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+
+ <style>
+ html{
+   background-color: #8e9573;
+ }
+h1{
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  padding-top:15px;
+  color: #07252a;
+}
+
+
+
+ </style>
+
+</head>
+
+<body>
+ <h1>How long do animals live?</h1>
+
+ <script>
+
+var svg =
+document.createElementNS("http://www.w3.org/2000/svg","svg");
+  svg.setAttribute("width","1000");
+  svg.setAttribute("height","2500px")
+  svg.setAttribute("id","kotimeline");
+  svg.setAttribute("text-align","center");
+document.body.append(svg);
+
+var i, k;
+
+var c = document.getElementById('kotimeline');
+  var ctx = c.getContext('2d');
+  ctx.beginPath();
+  ctx.moveTo(20,20);
+  ctx.bezierCurveTo(200,100,200,100,200,20);
+  
+
+
+ </script>
+
+
+   </body>
+ </html>

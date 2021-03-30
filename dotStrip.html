@@ -1,0 +1,245 @@
+<html><head>
+<meta charset="utf-8">
+<title>S4 | Distribution</title>
+ <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+
+ <style>
+
+   h1{
+     font-family: 'Quicksand', sans-serif;
+     text-align: left;
+     padding-left: 20px;
+   }
+   svg{
+     position: absolute;
+     z-index: 1;
+     left: 80;
+   }
+   .axis{
+     stroke: rgb(0,0,0);
+     stroke-width: 2;
+   }
+   text{
+     font-family: 'Quicksand', sans-serif;
+   }
+   .xaxis{
+     font-weight: bold;
+   }
+   .yaxis{
+     transform:rotate(-90deg);
+     font-family: 'Quicksand', sans-serif;
+     position: absolute;
+     left: 5px;
+     top: 350px;
+     font-weight: bold;
+   }
+
+   .buttonOne{
+     font-family: 'Quicksand', sans-serif;
+     position: absolute;
+     left: 700px;
+     top: 200px;
+     font-weight: bold;
+   }
+
+   .legend{
+     position: absolute;
+     margin-left: 50px;
+     margin-top: 20px;
+     font-family: 'Quicksand', sans-serif;
+     font-weight: bold;
+   }
+
+
+   button.first{
+     background-color: white;
+     color: black;
+     border: 3.5px solid black;
+     padding: 12px 12px;
+     margin-left: 9px;
+     margin-right: 9px;
+     font-size: 20px;
+     font-weight: bold;
+     font-family: 'Quicksand', sans-serif;
+   }
+   .portfolio{
+     position: fixed; bottom: 50px; right: 20px;
+     width: 180px; height: 180px;
+     background-color: black; color: linen;
+     border-radius: 90px;
+     z-index: 3;
+   }
+   .portfolio h1{
+     font-family: 'Quicksand', sans-serif;
+     font-size: 20px; color: linen;
+     text-transform: uppercase;
+   }
+   .r{
+     position: absolute; left: 30px; top: 35px;
+   }
+   .t{
+     position: absolute; left: 55px; top: 65px;
+   }
+   .p{
+     position: absolute; left: 15px; top: 95px;
+   }
+
+ </style>
+
+</head>
+<!-- data-gr-c-s-loaded="true"
+ put in body?-->
+<body>
+ <h1>Student to Teacher Ratio Across Inhabited Continents</h1>
+ <div class="yaxis">Continent</div>
+ <script>
+
+
+ var svg =
+
+   document.createElementNS("http://www.w3.org/2000/svg", "svg");
+   svg.setAttribute("width","900");
+   svg.setAttribute("height","650");
+   svg.setAttribute("id","koBackground");
+   document.body.append(svg);
+ var i, k;
+
+ var xAxis =
+   document.createElementNS("http://www.w3.org/2000/svg", "rect");
+   xAxis.setAttribute("height", "4");
+   xAxis.setAttribute("width", "875");
+   xAxis.setAttribute("x", "90");
+   xAxis.setAttribute("y", "600");
+   xAxis.setAttribute("fill", "black");
+   document.getElementById("koBackground").appendChild(xAxis);
+
+   var yAxis =
+     document.createElementNS("http://www.w3.org/2000/svg", "rect");
+     yAxis.setAttribute("height", "590");
+     yAxis.setAttribute("width", "4");
+     yAxis.setAttribute("x", "90");
+     yAxis.setAttribute("y", "10");
+     yAxis.setAttribute("fill", "black");
+     document.getElementById("koBackground").appendChild(yAxis);
+
+   var continents = [['1','50','Europe'],['1','135','North'],['1','165','America'],['1','235','South'],['1','265','America'],['1','350','Asia'],
+   ['1','450','Australia'],['1','550','Africa']];
+
+   for(i=0; i<continents.length; i++){
+     var yLabel = document.createElementNS('http://www.w3.org/2000/svg','text');
+     yLabel.setAttribute('x',continents[i][0]);
+     yLabel.setAttribute('y',continents[i][1]);
+     yLabel.setAttribute('font-size','20px');
+     yLabel.setAttribute('fill','#0D050C');
+     yLabel.innerHTML = continents[i][2];
+     document.getElementById("koBackground").appendChild(yLabel);
+   }
+
+   var numbers = [['275','635','25%'],['525','635','50%'],['750','635','75%']];
+
+   for(i=0; i<numbers.length; i++){
+     var label2 = document.createElementNS('http://www.w3.org/2000/svg','text');
+     label2.setAttribute('x',numbers[i][0]);
+     label2.setAttribute('y',numbers[i][1]);
+     label2.setAttribute('font-size','17px');
+     label2.setAttribute('fill','#0D050C');
+     label2.innerHTML = numbers[i][2];
+     document.getElementById("koBackground").appendChild(label2);
+   }
+
+var europeDots = [[160,45],[185,45],[190,45],[200,45],[205,45],[215,45],[220,45],[230,45],[245,45],[250,45],[265,45],[280,45],[285,45],[320,45]];
+
+for( j=0; j<europeDots.length; j++){
+  var europe = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+  europe.setAttribute('cx', europeDots[j][0]);
+  europe.setAttribute('cy', europeDots[j][1]);
+  europe.setAttribute('rx', '10');
+  europe.setAttribute('ry', '10');
+  europe.setAttribute('fill', '#66D36680');
+  document.getElementById("koBackground").appendChild(europe);
+}
+
+var northAmericaDots = [[140,145],[155,145],
+//dense
+[205,145],[210,145],[215,145],[230,145],[235,145],[245,145],[255,145],[260,145],[265,145],[280,145],[295,145],[305,145],[309,145],[315,145],[325,145],[340,145],
+//dense2.0
+[470,145],[475,145],[485,145],[500,145]];
+
+for( j=0; j<northAmericaDots.length; j++){
+  var northAmerica = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+  northAmerica.setAttribute('cx', northAmericaDots[j][0]);
+  northAmerica.setAttribute('cy', northAmericaDots[j][1]);
+  northAmerica.setAttribute('rx', '10');
+  northAmerica.setAttribute('ry', '10');
+  northAmerica.setAttribute('fill', '#66A9D380');
+  document.getElementById("koBackground").appendChild(northAmerica);
+}
+
+
+var southAmericaDots = [[185,245],[190,245],[195,245],[210,245],[220,245],[225,245],[228,245],[235,245],[250,245],[265,245],[285,245],[300,245],[425,245]];
+
+for( j=0; j<southAmericaDots.length; j++){
+  var southAmerica = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+  southAmerica.setAttribute('cx', southAmericaDots[j][0]);
+  southAmerica.setAttribute('cy', southAmericaDots[j][1]);
+  southAmerica.setAttribute('rx', '10');
+  southAmerica.setAttribute('ry', '10');
+  southAmerica.setAttribute('fill', '#6673D380');
+  document.getElementById("koBackground").appendChild(southAmerica);
+}
+
+var asiaDots = [[155,345],[165,345],[170,345],[175,345],[190,345],[200,345],[202,345],[205,345],[210,345],[220,345],[230,345],[235,345],[240,345],[245,345],[260,345],[265,345],
+[275,345],[290,345],[305,345],[310,345],[320,345],[325,345],[340,345],[350,345],[380,345],[395,345],[415,345],[420,345],[440,345],[475,345],[480,345],[500,345],
+[500,345],[545,345],[550,345],[560,345],[580,345],[735,345]];
+
+for( j=0; j<asiaDots.length; j++){
+  var asia = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+  asia.setAttribute('cx', asiaDots[j][0]);
+  asia.setAttribute('cy', asiaDots[j][1]);
+  asia.setAttribute('rx', '10');
+  asia.setAttribute('ry', '10');
+  asia.setAttribute('fill', '#9066D380');
+  document.getElementById("koBackground").appendChild(asia);
+}
+
+
+var australiaDots = [[200,445],[205,445],[215,445],[220,445],[230,445],[250,445],[255,445],[260,445],[270,445],[275,445],[295,445],[305,445],
+[310,445],[315,445],[320,445],[330,445],[340,445],[345,445],[355,445],[560,445],[565,445],[575,445],[590,445],[595,445],[605,445],[625,445],[630,445],[640,445],
+[650,445],[665,445],[675,445],[690,445]];
+
+for( j=0; j<australiaDots.length; j++){
+  var australia = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+  australia.setAttribute('cx', australiaDots[j][0]);
+  australia.setAttribute('cy', australiaDots[j][1]);
+  australia.setAttribute('rx', '10');
+  australia.setAttribute('ry', '10');
+  australia.setAttribute('fill', '#C666D380');
+  document.getElementById("koBackground").appendChild(australia);
+}
+
+
+var africaDots = [[225,545],[250,545],[255,545],[280,545],[305,545],[310,545],[315,545],[340,545],[365,545],[370,545],[395,545],[410,545],[415,545],[425,545],[435,545],
+[465,545],[470,545],[490,545],[515,545],[520,545],[535,545],[540,545],[565,545],[570,545],[600,545],[625,545],[630,545],[635,545],[670,545],[705,545],[800,545]];
+
+for( j=0; j<africaDots.length; j++){
+  var africa = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+  africa.setAttribute('cx', africaDots[j][0]);
+  africa.setAttribute('cy', africaDots[j][1]);
+  africa.setAttribute('rx', '10');
+  africa.setAttribute('ry', '10');
+  africa.setAttribute('fill', '#D366AA80');
+  document.getElementById("koBackground").appendChild(africa);
+}
+
+ </script>
+ <div class="buttonOne">
+   <button class="first" onclick= "outliers()" > Outliers </button>
+ </div>
+ <a href="DataVisualization.html">
+ <div class="portfolio">
+ <h1 class="r">  Return  </h1>
+ <h1 class="t"> to </h1>
+ <h1 class="p">  Portfolio </h1>
+ </div></a>
+   </body>
+ </html>

@@ -1,0 +1,184 @@
+<html><head>
+<meta charset="utf-8">
+<title>Quarantine Activities</title>
+<style>
+body {
+  font: 12px sans-serif;
+}
+
+svg {
+  margin: 0px auto;
+  display: block;
+}
+
+path.arc {
+  opacity: 0.9;
+  transition: opacity 0.5s;
+}
+
+path.arc:hover {
+  opacity: 0.7;
+}
+
+.axis line, .axis circle  {
+  stroke: #cccccc;
+  stroke-width: 1px
+}
+
+.axis circle {
+  fill: none;
+}
+
+.r.axis text {
+  text-anchor: end
+}
+
+.tooltip {
+  position: absolute;
+  display: none;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 3px;
+  box-shadow: -3px 3px 15px #888;
+  color: white;
+  padding: 6px;
+}
+</style>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body data-gr-c-s-loaded="true">
+<script>
+const width = 960,
+  height = 500,
+  chartRadius = height / 2 - 40;
+
+const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+let svg = d3.select('body').append('svg')
+  .attr('width', width)
+  .attr('height', height)
+  .append('g')
+    .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+
+let tooltip = d3.select('body').append('div')
+  .attr('class', 'tooltip');
+
+const PI = Math.PI,
+  arcMinRadius = 10,
+  arcPadding = 10,
+  labelPadding = -5,
+  numTicks = 10;
+
+
+d3.csv('activities.csv', (error, data) => {
+
+  let scale = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.value) * 2.0])
+    .range([0, 2 * PI]);
+
+  let ticks = scale.ticks(numTicks).slice(0, -1);
+  let keys = data.map((d, i) => d.name);
+  //number of arcs
+  const numArcs = keys.length;
+  const arcWidth = (chartRadius - arcMinRadius - numArcs * arcPadding) / numArcs;
+
+  let arc = d3.arc()
+    .innerRadius((d, i) => getInnerRadius(i))
+    .outerRadius((d, i) => getOuterRadius(i))
+    .startAngle(0)
+    .endAngle((d, i) => scale(d))
+
+  let radialAxis = svg.append('g')
+    .attr('class', 'r axis')
+    .selectAll('g')
+      .data(data)
+      .enter().append('g');
+
+  radialAxis.append('circle')
+    .attr('r', (d, i) => getOuterRadius(i) + arcPadding);
+
+  radialAxis.append('text')
+    .attr('x', labelPadding)
+    .attr('y', (d, i) => -getOuterRadius(i) + arcPadding)
+    .text(d => d.name);
+
+  let axialAxis = svg.append('g')
+    .attr('class', 'a axis')
+    .selectAll('g')
+      .data(ticks)
+      .enter().append('g')
+        .attr('transform', d => 'rotate(' + (rad2deg(scale(d)) - 90) + ')');
+
+  axialAxis.append('line')
+    .attr('x2', chartRadius);
+
+  axialAxis.append('text')
+    .attr('x', chartRadius + 10)
+    .style('text-anchor', d => (scale(d) >= PI && scale(d) < 2 * PI ? 'end' : null))
+    .attr('transform', d => 'rotate(' + (90 - rad2deg(scale(d))) + ',' + (chartRadius + 10) + ',0)')
+    .text(d => d);
+
+  //data arcs
+  let arcs = svg.append('g')
+    .attr('class', 'data')
+    .selectAll('path')
+      .data(data)
+      .enter().append('path')
+      .attr('class', 'arc')
+      .style('fill', (d, i) => color(i))
+
+  arcs.transition()
+    .delay((d, i) => i * 200)
+    .duration(1000)
+    .attrTween('d', arcTween);
+
+  arcs.on('mousemove', showTooltip)
+  arcs.on('mouseout', hideTooltip)
+
+
+  function arcTween(d, i) {
+    let interpolate = d3.interpolate(0, d.value);
+    return t => arc(interpolate(t), i);
+  }
+
+  function showTooltip(d) {
+    tooltip.style('left', (d3.event.pageX + 10) + 'px')
+      .style('top', (d3.event.pageY - 25) + 'px')
+      .style('display', 'inline-block')
+      .html(d.value);
+  }
+
+  function hideTooltip() {
+    tooltip.style('display', 'none');
+  }
+
+  function rad2deg(angle) {
+    return angle * 180 / PI;
+  }
+
+  function getInnerRadius(index) {
+    return arcMinRadius + (numArcs - (index + 1)) * (arcWidth + arcPadding);
+  }
+
+  function getOuterRadius(index) {
+    return getInnerRadius(index) + arcWidth;
+  }
+});
+</script><svg width="960" height="500"><g transform="translate(480,250)"><g class="r axis"><g><circle r="210.00000000000003"></circle><text x="-5" y="-190.00000000000003">Study</text></g><g><circle r="181.42857142857144"></circle><text x="-5"
+  y="-161.42857142857144">Homework</text></g><g><circle r="152.85714285714286"></circle><text x="-5" y="-132.85714285714286">Netflix</text></g><g><circle r="124.28571428571429"></circle><text x="-5" y="-104.28571428571429">Game</text></g><g><circle r="95.71428571428571">
+
+  </circle><text x="-5" y="-75.71428571428571">Sleep</text></g><g><circle r="67.14285714285714"></circle><text x="-5" y="-47.14285714285714">Eat</text></g><g><circle r="38.57142857142857"></circle><text x="-5" y="-18.571428571428573">Online Classes</text>
+  </g></g><g class="a axis"><g transform="rotate(-90)"><line x2="210"></line><text x="220" transform="rotate(90,220,0)">0</text></g><g transform="rotate(-63.333333333333336)"><line x2="210"></line><text x="220" transform="rotate(63.333333333333336,220,0)">1</text>
+  </g><g transform="rotate(-36.66666666666667)"><line x2="210"></line><text x="220" transform="rotate(36.66666666666667,220,0)">2</text></g><g transform="rotate(-10)"><line x2="210"></line><text x="220" transform="rotate(10,220,0)">3</text></g><g transform="rotate(16.666666666666657)">
+    <line x2="210"></line><text x="220" transform="rotate(-16.666666666666657,220,0)">4</text></g><g transform="rotate(43.333333333333314)"><line x2="210"></line><text x="220" transform="rotate(-43.333333333333314,220,0)">5</text></g><g transform="rotate(70)"><line x2="210"></line>
+      <text x="220" transform="rotate(-70,220,0)">6</text></g><g transform="rotate(96.66666666666669)"><line x2="210"></line><text x="220" transform="rotate(-96.66666666666669,220,0)" style="text-anchor: end;">7</text></g><g transform="rotate(123.33333333333331)"><line x2="210"></line>
+        <text x="220" transform="rotate(-123.33333333333331,220,0)" style="text-anchor: end;">8</text></g><g transform="rotate(149.99999999999997)"><line x2="210"></line><text x="220" transform="rotate(-149.99999999999997,220,0)" style="text-anchor: end;">9</text></g><g transform="rotate(176.66666666666663)">
+          <line x2="210"></line><text x="220" transform="rotate(-176.66666666666663,220,0)" style="text-anchor: end;">10</text></g><g transform="rotate(203.33333333333331)"><line x2="210"></line><text x="220" transform="rotate(-203.33333333333331,220,0)" style="text-anchor: end;">11</text></g>
+          <g transform="rotate(230)"><line x2="210"></line><text x="220" transform="rotate(-230,220,0)" style="text-anchor: end;">12</text></g></g><g class="data"><path class="arc" d="M1.2246467991473534e-14,-200.00000000000003A200.00000000000003,200.00000000000003,0,0,1,109.90179561416124,167.0975622825873L99.69662887856055,151.58136007063277A181.42857142857144,181.42857142857144,0,0,0,1.1109295963693848e-14,-181.42857142857144Z" style="fill: rgb(31, 119, 180);">
+
+          </path><path class="arc" d="M1.0496972564120172e-14,-171.42857142857144A171.42857142857144,171.42857142857144,0,0,1,164.2267735397981,49.1662684647583L146.4355397396533,43.83992271440949A152.85714285714286,152.85714285714286,0,0,0,9.359800536340486e-15,-152.85714285714286Z" style="fill: rgb(255, 127, 14);"></path><path class="arc" d="M8.747477136766808e-15,-142.85714285714286A142.85714285714286,142.85714285714286,0,0,1,114.58902753643483,-85.30837024325517L99.6924539566983,-74.218282111632A124.28571428571429,124.28571428571429,0,0,0,7.610305108987124e-15,-124.28571428571429Z" style="fill: rgb(44, 160, 44);"></path><path class="arc" d="M6.997981709413447e-15,-114.28571428571429A114.28571428571429,114.28571428571429,0,1,1,6.997981709413447e-15,114.28571428571429L5.8608096816337624e-15,95.71428571428572A95.71428571428572,95.71428571428572,0,1,0,5.8608096816337624e-15,-95.71428571428572Z" style="fill: rgb(214, 39, 40);">
+
+          </path><path class="arc" d="M5.248486282060085e-15,-85.71428571428571A85.71428571428571,85.71428571428571,0,1,1,-85.56927070896583,4.983842478040815L-67.02926205535657,3.9040099411319718A67.14285714285714,67.14285714285714,0,1,0,4.1113142542804e-15,-67.14285714285714Z" style="fill: rgb(148, 103, 189);"></path><path class="arc" d="M3.498990854706723e-15,-57.14285714285714A57.14285714285714,57.14285714285714,0,0,1,25.645667440026415,-51.06472230419498L17.31082552201783,-34.46868755533161A38.57142857142857,38.57142857142857,0,0,0,2.361818826927038e-15,-38.57142857142857Z" style="fill: rgb(140, 86, 75);"></path><path class="arc" d="M1.7494954273533618e-15,-28.571428571428573A28.571428571428573,28.571428571428573,0,0,1,18.365360276758267,-21.88698408911366L6.427876096865393,-7.66044443118978A10,10,0,0,0,6.123233995736766e-16,-10Z" style="fill: rgb(227, 119, 194);">
+            
+          </path></g></g></svg><div class="tooltip" style="left: 535px; top: 164px; display: none;">10</div>
+
+</body></html>

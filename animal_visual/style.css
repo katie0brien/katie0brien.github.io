@@ -1,0 +1,257 @@
+html{
+  background-color: ivory;
+  z-index:1;
+}
+h1{
+  position: relative;
+  font-family: 'Quicksand' ,  sans-serif;
+  font-size: 40px;
+  color: #07252a;
+}
+svg{
+  position:absolute;
+  font-family: 'Quicksand', sans-serif;
+  z-index: -1;
+}
+
+p{
+  position:absolute;
+  color: #07252a;
+  font-family: 'Quicksand', sans-serif;
+  font-size:20px;
+
+}
+#viz{position:absolute;
+}
+
+.ant{
+  position: absolute;
+  padding-top:46;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.rat{
+  position: absolute;
+  padding-top:178;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.hare{
+  position: absolute;
+  padding-top:506;
+  height: 60px;
+}
+.toad{
+  position: absolute;
+  padding-top:573;
+  height: 60px;
+
+}
+.fox{
+  position: absolute;
+  padding-top:640;
+  height: 60px;
+}
+.squirrel{
+  position: absolute;
+  padding-top:707;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.eel{
+  position: absolute;
+  padding-top:774;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.earthworm{
+  position: absolute;
+  padding-top:841;
+  height: 60px;
+}
+.blackbird{
+  position: absolute;
+  padding-top:986;
+  height: 60px;
+}
+.deer{
+  position: absolute;
+  padding-top:1052;
+  height: 60px;
+}
+.lion{
+  position: absolute;
+  padding-top:1118;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.sheep{
+  position: absolute;
+  padding-top:1184;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.wolf{
+  position: absolute;
+  padding-top:1250;
+  height: 60px;
+}
+.woodpecker{
+  position: absolute;
+  padding-top:1316;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.cat{
+  position: absolute;
+  padding-top:1532;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.dog{
+  position: absolute;
+  padding-top: 1598;
+  height: 60px;
+  transform: scaleX(-1);
+}
+.canary{
+  position: absolute;
+  padding-top:1730;
+  height: 60px;
+}
+.chicken{
+  position: absolute;
+  padding-top:1796;
+  height: 60px;
+}
+.elk{
+  position: absolute;
+  padding-top:1946;
+  height: 60px;
+
+}
+.crocodile{
+  position: absolute;
+  padding-top:2146;
+  height: 60px;
+
+}
+.crow{
+  position: absolute;
+  padding-top:2213;
+  height: 60px;
+
+}
+.heron{
+  position: absolute;
+  padding-top:2280;
+  height: 60px;
+
+}
+.seagull{
+  position: absolute;
+  padding-top:2426;
+  height: 60px;
+
+}
+.dove{
+  position: absolute;
+  padding-top:2493;
+  height: 60px;
+
+}
+.ostrich{
+  position: absolute;
+  padding-top:2560;
+  height: 60px;
+
+}
+.carp{
+  position: absolute;
+  padding-top:2627;
+  height: 60px;
+
+}
+.horse{
+  position: absolute;
+  padding-top:2694;
+  height: 60px;
+
+}
+.camel{
+  position: absolute;
+  padding-top:2761;
+  height: 60px;
+
+}
+.bear{
+  position: absolute;
+  padding-top:2973;
+  height: 60px;
+
+}
+.owl{
+  position: absolute;
+  padding-top:3106;
+  height: 60px;
+
+}
+.crane{
+  position: absolute;
+  padding-top:3653;
+  height: 60px;
+
+}
+.hippo{
+  position: absolute;
+  padding-top:3720;
+  height: 60px;
+
+}
+.swan{
+  position: absolute;
+  padding-top:4546;
+  height: 60px;
+
+}
+.parrot{
+  position: absolute;
+  padding-top:4613;
+  height: 60px;
+
+}
+.goose{
+  position: absolute;
+  padding-top:4680;
+  height: 65px;
+
+}
+.rhino{
+  position: absolute;
+  padding-top:4883;
+  height: 70px;
+
+}
+.elephant{
+  position: absolute;
+  padding-top:5563;
+  height: 80px;
+
+}
+.mussel{
+  position: absolute;
+  padding-top:6400;
+  height: 60px;
+
+}
+.whale{
+  position: absolute;
+  padding-top:6590;
+  height: 80px;
+
+}
+.factone{
+  position:aboslute;
+  z-index:2;
+
+}

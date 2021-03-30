@@ -1,0 +1,576 @@
+@media screen and (max-width: 500px){
+  html{
+    background-color: black;
+    width: 500px;
+  }
+  .entire{
+    width: 480px;
+    height: 4800px;
+    background-color: linen;
+  }
+  #time {
+    position: absolute;
+    right:20px;
+    margin-top: 30px;
+    margin-right: 25px;
+    font-family: 'Quicksand', sans-sans-serif;
+    color: darkolivegreen;
+    font-size: 12px;
+  }
+  #day{
+    position: absolute;
+    right: 20px;
+    top:-20px;
+    margin-top: 40px;
+    margin-right: 25px;
+    font-family: 'Quicksand', sans-sans-serif;
+    color: darkolivegreen;
+    font-size: 12px;
+  }
+
+  .bubble1{
+    position: absolute;
+    top: 90px;
+    left: 70px;
+    width: 204px;
+    height: 204px;
+    border-radius: 102px;
+    background-color: rgba(188, 143, 143, .85);
+  }
+
+  .bubble2{
+    position: absolute;
+    top: 365px;
+    left: 300px;
+    width: 170px;
+    height: 170px;
+    border-radius: 85px;
+    background-color: rgba(47, 79, 79, .85);
+  }
+
+  .bubble3{
+    position: absolute;
+    top: 775px;
+    left: 170px;
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+    background-color: rgba(221,210,140, .85);
+  }
+
+  .bubble4{
+    position: absolute;
+    top: 1200px;
+    left: 25px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: rgba(188, 143, 143, .85);
+  }
+
+  .bubble5{
+    position: absolute;
+    top: 1600px;
+    left: 80px;
+    width: 255px;
+    height: 255px;
+    border-radius: 127.5px;
+    background-color: rgba(47, 79, 79, .85);
+  }
+
+  .bubble6{
+    position: absolute;
+    top: 2085px;
+    left: 190px;
+    width: 270px;
+    height: 270px;
+    border-radius: 135px;
+    background-color: rgba(221,210,140, .85);
+  }
+  .bubble7{
+    position: absolute;
+    top: 2480px;
+    left: 115px;
+    width: 187px;
+    height: 187px;
+    border-radius: 93.5px;
+    background-color: rgba(188, 143, 143, .85);
+  }
+  .bubble8{
+    position: absolute;
+    top: 2925px;
+    left: 260px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: rgba(47, 79, 79, .85);
+  }
+
+  .bubble9{
+    position: absolute;
+    top: 3375px;
+    left: 70px;
+    width: 240px;
+    height: 240px;
+    border-radius: 120px;
+    background-color: rgba(221,210,140, .85);
+  }
+
+  .bubble10{
+    position: absolute;
+    top: 3825px;
+    left: 200px;
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+    background-color: rgba(188, 143, 143, .85);
+}
+.bubble11{
+  position: absolute;
+  top: 4375px;
+  left: 210px;
+  width: 240px;
+  height: 240px;
+  border-radius: 120px;
+  background-color: rgba(221,210,140, .85);
+}
+
+  .container{
+    z-index: 2;
+  }
+  .titleTop{
+    position: absolute;
+    width: 68px;
+    margin-top: 45px;
+    left: 150px;
+    overflow: visible;
+    font-size: 42px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    font-family: 'Playfair Display', serif;
+  }
+  .line{
+    position:absolute;
+    width: 220px;
+    height:4px;
+    background-color: black;
+    top: 175px;
+    left: 178px;
+  }
+
+  .back{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    width:50px;
+  }
+
+  .song1{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 225px;
+    overflow: hidden;
+
+  }
+  .song1 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song1 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song1 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+
+  .song2{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 675px;
+    overflow: hidden;
+
+  }
+  .song2 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song2 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song2 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .song3{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 1125px;
+    overflow: hidden;
+
+  }
+  .song3 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song3 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song3 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .song4{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 1575px;
+    overflow: hidden;
+
+  }
+  .song4 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song4 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song4 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .song5{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 2025px;
+    overflow: hidden;
+
+  }
+  .song5 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song5 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song5 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .song6{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 2475px;
+    overflow: hidden;
+
+  }
+  .song6 h1{
+    position: relative;
+    left: 30px;
+    font-size: 31px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song6 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song6 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .song7{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 2925px;
+    overflow: hidden;
+
+  }
+  .song7 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song7 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song7 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .song8{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 3375px;
+    overflow: hidden;
+
+  }
+  .song8 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song8 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song8 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .song9{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 3825px;
+    overflow: hidden;
+
+  }
+  .song9 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song9 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song9 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .song10{
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 100px;
+    top: 4275px;
+    overflow: hidden;
+
+  }
+  .song10 h1{
+    position: relative;
+    left: 30px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+  }
+  .song10 h2{
+    position: relative;
+    left: 34px;
+    font-family: 'Quicksand',sans-serif;
+    text-transform: uppercase;
+    color: black;
+    font-size: 18px;
+    top: -15px;
+  }
+  .song10 img{
+    width: 350px;
+    position: relative;
+    top: -15px;
+  }
+
+  .foot{
+    height: 45px;
+    width: 100%;
+    background-color: black;
+    color: linen;
+    font-family:'Quicksand', sans-serif;
+    position: absolute;
+    top: 4800px;
+    left:-10px;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+  }
+
+  #pop-up-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 3200px;
+    width: 100%;
+    background-color: rgba(31, 31, 31, 0.9);
+  }
+
+  #pop-up {
+    position: absolute;
+    top: 87.175px;
+    left: 144.737px;
+    height: 200.175px;
+    width: 210.526px;
+    background-color: black;
+
+    border: solid 2px linen;
+    color: linen;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+
+  }
+
+  #pop-up.fixed {
+    position: fixed;
+  }
+
+  #pop-up h1 {
+    font-size: 20.28px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+  }
+
+  #pop-up h3 {
+    font-size: 12.28px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+  }
+
+  #pop-up button {
+    float: middle;
+    height: 20px;
+    width: 40px;
+    color: black;
+    background-color: rosybrown;
+    border-style: none;
+  margin-top:10px;
+  font-size: 12px;
+  }

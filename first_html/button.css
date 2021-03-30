@@ -1,0 +1,30 @@
+
+/* Container needed to position the button. Adjust the width as needed */
+.homebutton {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.homebutton img {
+  width: 200px;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.homebutton .btn {
+  position: top left;
+ transform: translate(-160%, -125%);
+ -ms-transform: translate(-35%, -25%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.homebutton .btn:hover {
+  background-color: black;
+}

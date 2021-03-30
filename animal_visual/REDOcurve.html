@@ -1,0 +1,205 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>S6 | Final</title>
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand&display=swap" rel="stylesheet">
+<link href="style2.css" type="text/css" rel="stylesheet"  />
+
+</head>
+
+<body>
+ <h1>How long do animals live?</h1>
+ <div id="viz">
+
+ </div>
+ <div class="animals">
+
+ <img class="ant" src="ant.png" alt="insect" />
+
+ <img class="rat" src="rat.png" alt="rat" />
+ <img class="hare" src="hare.png" alt="hare" />
+ <img class="toad" src="toad.png" alt="toad" />
+ <img class="fox" src="fox.png" alt="fox" />
+ <img class="squirrel" src="squirrel.png" alt="squirrel" />
+ <img class="eel" src="eel.png" alt="eel" />
+ <img class="earthworm" src="earthworm.png" alt="earthworm" />
+ <img class="blackbird" src="blackbird.png" alt="blackbird" />
+ <img class="deer" src="deer.png" alt="deer" />
+ <img class="lion" src="lion.png" alt="lion" />
+ <img class="sheep" src="sheep.png" alt="sheep" />
+ <img class="wolf" src="wolf.png" alt="wolf" />
+ <img class="woodpecker" src="woodpecker.png" alt="woodpecker" />
+ <img class="cat" src="cat.png" alt="cat" />
+ <img class="dog" src="dog.png" alt="dog" />
+ <img class="canary" src="canary.png" alt="canary" />
+ <img class="chicken" src="chicken.png" alt="chicken" />
+ <img class="elk" src="elk.png" alt="elk" />
+ <img class="crocodile" src="crocodile.png" alt="crocodile" />
+ <img class="crow" src="crow.png" alt="crow" />
+ <img class="heron" src="heron.png" alt="heron" />
+ <img class="seagull" src="seagull.png" alt="seagull" />
+ <img class="dove" src="dove.png" alt="dove" />
+ <img class="ostrich" src="ostrich.png" alt="ostrich" />
+ <img class="carp" src="carp.png" alt="carp" />
+ <img class="horse" src="horse.png" alt="horse" />
+ <img class="camel" src="camel.png" alt="camille" />
+ <img class="bear" src="bear.png" alt="camille" />
+ <img class="owl" src="owl.png" alt="camille" />
+ <img class="crane" src="crane.png" alt="camille" />
+ <img class="hippo" src="hippo.png" alt="camille" />
+ <img class="swan" src="swan.png" alt="swan" />
+ <img class="parrot" src="parrot.png" alt="parrot" />
+ <img class="goose" src="goose.png" alt="goose" />
+ <img class="rhino" src="rhino.png" alt="rhino" />
+ <img class="elephant" src="elephant.png" alt="elephant" />
+ <img class="mussel" src="mussel.png" alt="mussel" />
+ <img class="whale" src="whale.png" alt="whale" />
+ </div>
+
+<p style="padding-top: 80;"></p>
+
+<svg class="linething" height="1000" width="1700">
+<path id ="curve" d="M 200 100 L 1000 100 C 1100 100 1100 200 1000 200 L 200 200 C 100 200 100 300 200 300 L 1000 300 C 1100 300 1100 400 1000 400 L 200 400 C 100 400 100 500 200 500 L 1000 500 C 1100 500 1100 600 1000 600 L 200 600 C 100 600 100 700 200 700 L 1000 700 " stroke="	rgb(7, 37, 42)" stroke-width="5" fill="none" />
+</svg>
+
+ <script>
+
+var svg =
+document.createElementNS("http://www.w3.org/2000/svg","svg");
+  svg.setAttribute("width","1700");
+  svg.setAttribute("height","10000px")
+  svg.setAttribute("id","kotimeline");
+  svg.setAttribute("text-align","center");
+
+    document.body.append(svg);
+
+var i, k;
+
+var stuff = [['100','40'],['100','500'],['100','980'],['100','1460'],['100','1940']
+    ,['100','2420'] ,['100','2900'],['100','3380'],['100','3860'],['100','4340'],
+    ['100','4820'],['100','5300'],['100','5780'],['100','6260'],['100','6740']
+];
+
+for(i=0; i<stuff.length; i++){
+  var mainLine = document.createElementNS('http://www.w3.org/2000/svg','rect');
+  mainLine.setAttribute('height','400');
+  mainLine.setAttribute('width','3');
+  mainLine.setAttribute('x',stuff[i][0]);
+  mainLine.setAttribute('y',stuff[i][1]);
+  mainLine.setAttribute('fill','#07252a');
+  document.getElementById("kotimeline").appendChild(mainLine);
+}
+
+var years = [['95','25','0 years'],['95','483','5'],['90','950','10'],['90','1430','15'],['90','1910','20']
+    ,['90','2390','25'],['90','2870','30'],['90','3350','35'],['90','3840','40'],['90','4310','45']
+    ,['90','4790','50'],['90','5270','55'],['90','5750','60'],['90','6230','65'],['90','6710','70']
+];
+
+for(i=0; i<stuff.length; i++){
+  var numbers = document.createElementNS('http://www.w3.org/2000/svg','text');
+  numbers.setAttribute('x',years[i][0]);
+  numbers.setAttribute('y',years[i][1]);
+  numbers.setAttribute('fill','#07252a');
+  numbers.setAttribute('font-size','30px');
+  numbers.setAttribute('font-weight','bold');
+  numbers.innerHTML = years[i][2];
+  document.getElementById("kotimeline").appendChild(numbers);
+}
+
+var legendBox = [
+  ['mammals','#e85827','1300','60','1380','95'],['birds','#7e7f60','1300','140','1380','175'],
+  ['other vertebrates','#81adbf','1300','220','1380','250'],['invertebrates','#eead26','1300','300','1380','330']
+];
+
+for(i=0;i<legendBox.length; i++){
+  var box= document.createElementNS("http://www.w3.org/2000/svg","rect");
+  box.setAttribute('x', legendBox[i][2]);
+  box.setAttribute('y', legendBox[i][3]);
+  box.setAttribute('width','50');
+  box.setAttribute('height','50');
+  box.setAttribute('fill',legendBox[i][1]);
+  document.getElementById("kotimeline").appendChild(box);
+}
+
+for(i=0;i<legendBox.length;i++){
+  var label = document.createElementNS('http://www.w3.org/2000/svg','text');
+  label.setAttribute('x',legendBox[i][4]);
+  label.setAttribute('y',legendBox[i][5]);
+  label.setAttribute('fill','#07252a');
+  label.setAttribute('font-size','20px');
+  label.innerHTML = legendBox[i][0];
+  document.getElementById('kotimeline').appendChild(label);
+}
+
+
+  var titles = [
+['120','INSECTS','200'],['120', 'RAT','350'],['120', 'HARE','450'],['120', 'TOAD','612'],['120', 'FOX', '715'],['120', 'SQUIRREL','780'],
+['120',' EEL','880'],['120', 'EARTHWORM','930'], ['220', 'BLACK BIRD','950'], ['220', 'DEER','885'],['220', 'LION','800'],['220', 'SHEEP','720'],
+['220', 'WOLF','650'],['220', 'WOOD','570'],['235', 'PECKER','570'],['220', 'CAT','515'],['220', 'DOG','450'],['220', 'CANARY','345'],
+['220', 'CHICKEN','200'],['320', 'ELK','210'],['320', 'CROCODILE','397'],['320', 'RAVEN','490'],['320', 'HERON','560'],['320', 'SEAGULL','615'],
+['320', 'DOVE','690'],['320', 'OSTRICH','745'],['320', 'CARP','825'],['320', 'HORSE','880'],['320', 'CAMEL','950'],['420', 'BEAR','790'],
+['420', 'OWL','680'],['420', 'CRANE','355'],['420', 'HIPPO','230'],['520', 'SWAN','700'],['520', 'PARROT','840'],['520', 'GOOSE', '920'],
+['620', 'RHINO','900'],['620', 'ELEPHANT','350'],['720', 'MUSSEL','720'],['720', 'WHALE','900'],
+];
+
+
+  for(i=0;i<titles.length;i++){
+    var names = document.createElementNS('http://www.w3.org/2000/svg','text');
+    names.setAttribute('x',titles[i][2]);
+    names.setAttribute('y',titles[i][0]);
+    names.setAttribute('fill','#07252a');
+    names.setAttribute('font-size','15px');
+
+    names.innerHTML = titles[i][1];
+    document.getElementById('kotimeline').appendChild(names);
+  }
+
+
+
+
+  $(document).ready(function() {
+      $.ajax({
+          type: "GET",
+          url: "animals.csv",
+          dataType: "text",
+          success: function(data) {processData(data);}
+       });
+  });
+
+  function processData(allText) {
+      var allTextLines = allText.split(/\r\n|\n/);
+      var headers = allTextLines[0].split(',');
+      var lines = [];
+
+      for (var i=1; i<allTextLines.length; i++) {
+          var data = allTextLines[i].split(',');
+          if (data.length == headers.length) {
+
+              var tarr = [];
+              for (var j=0; j<headers.length; j++) {
+                  tarr.push(headers[j]+":"+data[j]);
+              }
+              lines.push(tarr);
+          }
+      }
+      // alert(lines);
+  }
+
+  var paragraph = d3.select("body")
+                .selectAll("p")
+                .data(data)
+                .text(function (d, i) {
+                    console.log("d: " + d);
+                    console.log("i: " + i);
+                    console.log("this: " + this);
+
+                    return d;
+                });
+
+
+
+
+
+</script>
+   </body>
+ </html>

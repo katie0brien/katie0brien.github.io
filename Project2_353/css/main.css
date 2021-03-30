@@ -1,0 +1,248 @@
+html{
+  background-color: black;
+
+
+}
+.entire{
+  width: 100%vh;
+  height: 800px;
+  background-color: linen;
+
+}
+.container{
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  width: 600px;
+  height: 600px;
+  border-radius: 25px;
+  background-color: rgba(143, 188, 139, .85);
+
+
+}
+.titleTop{
+  position: absolute;
+  margin-top: -45px;
+  left: 100px;
+  overflow: visible;
+  font-size: 72px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 18px;
+  font-family: 'Playfair Display', serif;
+}
+.titleBottom{
+  position: absolute;
+  margin-top: 540px;
+  left: 205px;
+  overflow: visible;
+  font-size: 72px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 18px;
+  font-family: 'Playfair Display', serif;
+}
+.face img{
+  width: 250px;
+  position: absolute;
+  left: 180px;
+  top: 110px;
+}
+.nameLeft{
+  position: absolute;
+  overflow: visible;
+  font-size: 22px;
+  color: darkolivegreen;
+  text-transform: lowercase;
+  letter-spacing: 10px;
+  font-family: 'Playfair Display', serif;
+  top: 250px;
+  left: 125px;
+}
+.nameRight{
+  position: absolute;
+  overflow: visible;
+  font-size: 22px;
+  color: darkolivegreen;
+  text-transform: lowercase;
+  letter-spacing: 10px;
+  font-family: 'Playfair Display', serif;
+  top: 250px;
+  left: 397px;
+}
+
+.btn-21 {
+  cursor: pointer;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20pt;
+  width: 200px;
+  height: 65px;
+  position: absolute;
+  left: 650px;
+  top: 250px;
+  padding: 20px 20px;
+  color: darkolivegreen;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  border-radius: 0px;
+  margin: 5px;
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+.btn-21:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, transparent, darkolivegreen);
+  animation: btn-21-left 2s linear infinite;
+  transition: 0.5s ease-in-out;
+}
+.btn-21:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, darkolivegreen);
+  animation: btn-21-top 2s linear infinite;
+  animation-delay: 1s;
+  transform: translateY(-100%);
+}
+.btn-21 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+}
+.btn-21 span:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, darkolivegreen);
+  animation: btn-21-right 2s linear infinite;
+}
+.btn-21 span:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 12px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, darkolivegreen);
+  animation: btn-22-bottom 2s linear infinite;
+  animation-delay: 1s;
+  transform: translateY(-100%)
+}
+.btn-21:hover:before {
+  background: linear-gradient(to left, transparent, rosybrown);
+}
+.btn-21:hover:after {
+  background: linear-gradient(to top, transparent, rosybrown);
+}
+.btn-21 span:hover:before {
+  background: linear-gradient(to bottom, transparent, rosybrown);
+}
+.btn-21 span:hover:after {
+  background: linear-gradient(to right, transparent, rosybrown);
+}
+.btn-21:hover {
+  color: rosybrown;
+}
+.btn-21:active:before {
+  background: linear-gradient(to left, transparent, rosybrown);
+}
+.btn-21:active:after {
+  background: linear-gradient(to top, transparent, rosybrown);
+}
+.btn-21 span:active:before {
+  background: linear-gradient(to bottom, transparent, rosybrown);
+}
+.btn-21 span:active:after {
+  background: linear-gradient(to right, transparent, rosybrown);
+}
+.btn-21:active {
+  color: rosybrown;
+}
+@keyframes btn-21-top {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes btn-21-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes btn-21-bottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes btn-21-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+#time{
+  font-family: 'Quicksand', sans-sans-serif;
+  color: darkolivegreen;
+  position: absolute;
+  top: 50px;
+  left: 25px;
+}
+#day{
+  font-family:'Quicksand', sans-serif;
+  color: darkolivegreen;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+.portfolio{
+  position: fixed; bottom: 50px; left: 20px;
+  width: 180px; height: 180px;
+  background-color: black; color: linen;
+  border-radius: 90px;
+}
+.portfolio h1{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px; color: linen;
+  text-transform: uppercase;
+}
+.r{
+  position: absolute; left: 50px; top: 35px;
+}
+.t{
+  position: absolute; left: 75px; top: 65px;
+}
+.p{
+  position: absolute; left: 35px; top: 95px;
+}

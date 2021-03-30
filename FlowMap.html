@@ -1,0 +1,393 @@
+<html><head>
+<meta charset="utf-8">
+<title>S4 | Spatial</title>
+ <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+
+ <style>
+
+   svg{
+     position: absolute;
+     z-index: 2;
+
+   }
+   h1{
+     font-family: 'Quicksand', sans-serif;
+     text-align: left;
+     padding-left: 20px;
+   }
+   .axis{
+     stroke: rgb(0,0,0);
+     stroke-width: 2;
+   }
+   text{
+     font-family: 'Quicksand', sans-serif;
+   }
+   .xaxis{
+     font-weight: bold;
+   }
+   .yaxis{
+
+     font-family: 'Quicksand', sans-serif;
+     position: absolute;
+     top: 350px;
+     left: 20px;
+     font-weight: bold;
+   }
+   /* canvas{
+     position: relative;
+     z-index: 2;
+     top: 0;
+     left: 10;
+   } */
+.order{
+  font-family: 'Quicksand', sans-serif;
+  position: absolute;
+  left: 810px;
+  top: 80px;
+  font-weight: bold;
+  font-size: 18px;
+}
+   .birdOne{
+     font-family: 'Quicksand', sans-serif;
+     position: absolute;
+     left: 850px;
+     top: 150px;
+     font-weight: bold;
+   }
+
+   button.boreal{
+    position:absolute;
+     color: white;
+     border: 5px solid pink;
+     border-radius: 50%;
+     padding: 80px 80px ;
+     margin:auto;
+      font-size: 20px;
+     background-image: url(borealsongbird.jpg);
+     background-size:cover;
+     background-repeat: no-repeat;
+   }
+
+   .birdTwo{
+     font-family: 'Quicksand', sans-serif;
+     position: absolute;
+     left: 1150px;
+     top: 150px;
+     font-weight: bold;
+   }
+   button.eastern{
+    position:absolute;
+     color: white;
+     border: 5px solid teal;
+     border-radius: 50%;
+     padding: 80px 80px ;
+     margin:auto;
+      font-size: 20px;
+     background-image: url(easternwoodcock.jpg);
+     background-size:cover;
+     background-repeat: no-repeat;
+   }
+   .birdThree{
+     font-family: 'Quicksand', sans-serif;
+     position: absolute;
+     left: 1000px;
+     top: 400px;
+     font-weight: bold;
+   }
+   button.pacific{
+    position:absolute;
+     color: white;
+     border: 5px solid maroon;
+     border-radius: 50%;
+     padding: 80px 80px ;
+     margin:auto;
+     font-size: 20px;
+     background-image: url(pacificloon.jpg);
+     background-size:cover;
+     background-repeat: no-repeat;
+   }
+
+.koCanvas{
+  position:absolute;
+  background-image: url(mapBirds.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 765;
+  height: 574.5 ;
+  border: 3px solid black;
+  z-index: -2;
+}
+.factBox{
+  position: absolute;
+  width: 765;
+  height: 100;
+  border: 3px solid black;
+  top: 665;
+  z-index: -2;
+}
+.portfolio{
+  position: fixed; bottom: 50px; right: 20px;
+  width: 180px; height: 180px;
+  background-color: black; color: linen;
+  border-radius: 90px;
+  z-index: 3;
+}
+.portfolio h1{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px; color: linen;
+  text-transform: uppercase;
+}
+.r{
+  position: absolute; left: 30px; top: 35px;
+}
+.t{
+  position: absolute; left: 55px; top: 65px;
+}
+.p{
+  position: absolute; left: 15px; top: 95px;
+}
+
+ </style>
+
+</head>
+<!-- data-gr-c-s-loaded="true"
+ put in body?-->
+<body>
+ <h1>Migratory Paths of North American Birds</h1>
+<canvas class="koCanvas" ></canvas>
+ <script>
+  //
+  // var svg =
+  //
+  //   document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  //   svg.setAttribute("width","600");
+  //   svg.setAttribute("height","500");
+  //   svg.setAttribute("id","koBackground");
+  //   document.body.append(svg);
+  // var i, k;
+  //
+  // var xAxis =
+  //   document.createElementNS("http://www.w3.org/2000/svg", "rect");
+  //   xAxis.setAttribute("height", "4");
+  //   xAxis.setAttribute("width", "590");
+  //   xAxis.setAttribute("x", "10");
+  //   xAxis.setAttribute("y", "400");
+  //   xAxis.setAttribute("fill", "black");
+  //   document.getElementById("koBackground").appendChild(xAxis);
+  //
+  //
+
+  var svg =
+
+    document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("width","900");
+    svg.setAttribute("height","1000");
+    svg.setAttribute("id","koSVG");
+    document.body.append(svg);
+  var i, k;
+
+function borealSongBird(){
+
+  var start=
+    document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+    start.setAttribute("cx","200");
+    start.setAttribute("cy","100");
+    start.setAttribute("rx","5");
+    start.setAttribute("ry","5");
+    start.setAttribute("fill","black");
+    document.getElementById("koSVG").appendChild(start);
+
+    var start2=
+      document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+      start2.setAttribute("cx","250");
+      start2.setAttribute("cy","130");
+      start2.setAttribute("rx","5");
+      start2.setAttribute("ry","5");
+      start2.setAttribute("fill","black");
+      document.getElementById("koSVG").appendChild(start2);
+
+      var start3=
+        document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+        start3.setAttribute("cx","450");
+        start3.setAttribute("cy","250");
+        start3.setAttribute("rx","5");
+        start3.setAttribute("ry","5");
+        start3.setAttribute("fill","black");
+        document.getElementById("koSVG").appendChild(start3);
+
+  var boreal1 =
+    document.createElementNS("http://www.w3.org/2000/svg", "line");
+    boreal1.setAttribute("x1", "200");
+    boreal1.setAttribute("y1", "100");
+    boreal1.setAttribute("x2", "650");
+    boreal1.setAttribute("y2", "550");
+    boreal1.setAttribute("stroke", "black");
+    boreal1.setAttribute("stroke-width", "4");
+    document.getElementById("koSVG").appendChild(boreal1);
+
+    var boreal2 =
+      document.createElementNS("http://www.w3.org/2000/svg", "line");
+      boreal2.setAttribute("x1", "250");
+      boreal2.setAttribute("y1", "130");
+      boreal2.setAttribute("x2", "700");
+      boreal2.setAttribute("y2", "550");
+      boreal2.setAttribute("stroke", "black");
+      boreal2.setAttribute("stroke-width", "4");
+      document.getElementById("koSVG").appendChild(boreal2);
+
+      var boreal3 =
+        document.createElementNS("http://www.w3.org/2000/svg", "line");
+        boreal3.setAttribute("x1", "450");
+        boreal3.setAttribute("y1", "250");
+        boreal3.setAttribute("x2", "730");
+        boreal3.setAttribute("y2", "550");
+        boreal3.setAttribute("stroke", "black");
+        boreal3.setAttribute("stroke-width", "4");
+        document.getElementById("koSVG").appendChild(boreal3);
+
+var textB = [['10','625','Boreal Songbirds are birds'],["10","685","Please reload the page and select another Bird."]];
+
+for(i=0; i<textB.length; i++){
+  var fact1 = document.createElementNS('http://www.w3.org/2000/svg','text');
+  fact1.setAttribute('x',textB[i][0]);
+  fact1.setAttribute('y',textB[i][1]);
+  fact1.setAttribute('font-size','20px');
+  fact1.setAttribute('fill','black');
+  fact1.innerHTML = textB[i][2];
+  document.getElementById("koSVG").appendChild(fact1);
+}}
+
+function easternWoodcock(){
+
+  var startE=
+    document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+    startE.setAttribute("cx","450");
+    startE.setAttribute("cy","250");
+    startE.setAttribute("rx","5");
+    startE.setAttribute("ry","5");
+    startE.setAttribute("fill","black");
+    document.getElementById("koSVG").appendChild(startE);
+
+    var start2E=
+      document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+      start2E.setAttribute("cx","550");
+      start2E.setAttribute("cy","270");
+      start2E.setAttribute("rx","5");
+      start2E.setAttribute("ry","5");
+      start2E.setAttribute("fill","black");
+      document.getElementById("koSVG").appendChild(start2E);
+
+
+
+  var eastern1 =
+    document.createElementNS("http://www.w3.org/2000/svg", "line");
+    eastern1.setAttribute("x1", "450");
+    eastern1.setAttribute("y1", "250");
+    eastern1.setAttribute("x2", "400");
+    eastern1.setAttribute("y2", "450");
+    eastern1.setAttribute("stroke", "black");
+    eastern1.setAttribute("stroke-width", "4");
+    document.getElementById("koSVG").appendChild(eastern1);
+
+    var eastern2 =
+      document.createElementNS("http://www.w3.org/2000/svg", "line");
+      eastern2.setAttribute("x1", "550");
+      eastern2.setAttribute("y1", "270");
+      eastern2.setAttribute("x2", "450");
+      eastern2.setAttribute("y2", "420");
+      eastern2.setAttribute("stroke", "black");
+      eastern2.setAttribute("stroke-width", "4");
+      document.getElementById("koSVG").appendChild(eastern2);
+
+
+
+var textE = [['10','625','Eastern Woodcocks are birds'],["10","685","Please reload the page and select another Bird."]];
+
+for(i=0; i<textE.length; i++){
+  var fact2 = document.createElementNS('http://www.w3.org/2000/svg','text');
+  fact2.setAttribute('x',textE[i][0]);
+  fact2.setAttribute('y',textE[i][1]);
+  fact2.setAttribute('font-size','20px');
+  fact2.setAttribute('fill','black');
+  fact2.innerHTML = textE[i][2];
+  document.getElementById("koSVG").appendChild(fact2);
+}}
+
+function pacificLoon(){
+
+  var startP=
+    document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+    startP.setAttribute("cx","275");
+    startP.setAttribute("cy","270");
+    startP.setAttribute("rx","5");
+    startP.setAttribute("ry","5");
+    startP.setAttribute("fill","black");
+    document.getElementById("koSVG").appendChild(startP);
+
+    var start2P=
+      document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+      start2P.setAttribute("cx","235");
+      start2P.setAttribute("cy","135");
+      start2P.setAttribute("rx","5");
+      start2P.setAttribute("ry","5");
+      start2P.setAttribute("fill","black");
+      document.getElementById("koSVG").appendChild(start2P);
+
+  var pacific1 =
+    document.createElementNS("http://www.w3.org/2000/svg", "line");
+    pacific1.setAttribute("x1", "275");
+    pacific1.setAttribute("y1", "270");
+    pacific1.setAttribute("x2", "310");
+    pacific1.setAttribute("y2", "455");
+    pacific1.setAttribute("stroke", "black");
+    pacific1.setAttribute("stroke-width", "4");
+    document.getElementById("koSVG").appendChild(pacific1);
+
+    var pacific2 =
+      document.createElementNS("http://www.w3.org/2000/svg", "line");
+      pacific2.setAttribute("x1", "235");
+      pacific2.setAttribute("y1", "135");
+      pacific2.setAttribute("x2", "310");
+      pacific2.setAttribute("y2", "455");
+      pacific2.setAttribute("stroke", "black");
+      pacific2.setAttribute("stroke-width", "4");
+      document.getElementById("koSVG").appendChild(pacific2);
+
+var textP = [['10','625','Pacific Loons are birds'],["10","685","Please reload the page and select another Bird."]];
+
+for(i=0; i<textP.length; i++){
+  var fact3 = document.createElementNS('http://www.w3.org/2000/svg','text');
+  fact3.setAttribute('x',textP[i][0]);
+  fact3.setAttribute('y',textP[i][1]);
+  fact3.setAttribute('font-size','20px');
+  fact3.setAttribute('fill','black');
+  fact3.innerHTML = textP[i][2];
+  document.getElementById("koSVG").appendChild(fact3);
+}}
+
+
+ </script>
+ <div class="order">
+   SELECT BIRD:
+ </div>
+ <div class="birdOne">
+    <button class="boreal" onclick="borealSongBird()"> Boreal Songbird </button>
+ </div>
+ <div class="birdTwo">
+    <button class="eastern" onclick="easternWoodcock()"> Eastern Woodcock </button>
+ </div>
+ <div class="birdThree">
+    <button class="pacific" onclick="pacificLoon()"> Pacific Loon </button>
+ </div>
+ <div class="factBox">
+
+ </div>
+
+ <a href="DataVisualization.html">
+ <div class="portfolio">
+ <h1 class="r">  Return  </h1>
+ <h1 class="t"> to </h1>
+ <h1 class="p">  Portfolio </h1>
+ </div></a>
+   </body>
+ </html>

@@ -1,0 +1,27 @@
+html{
+
+  background-color: ivory;
+}
+h1{
+  position: relative;
+  font-family: 'Quicksand' ,  sans-serif;
+  font-size: 40px;
+  color: #07252a;
+}
+svg{
+  position:absolute;
+  font-family: 'Quicksand', sans-serif;
+  z-index: -1;
+}
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+.this-will-not-be-read {
+   display: none !important;
+}
+body {
+  padding: 50px;
+}

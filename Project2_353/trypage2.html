@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>KO | Project 2</title>
+    <link rel="icon" href="pics/neptune.png">
+    <link rel="stylesheet" href="css/p2.css">
+    <link rel="stylesheet" href="css/p2small.css">
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src ="js/index.js"></script>
+  </head>
+  <body>
+    <div class="entire">
+
+      <div id="time"></div>
+      <div id="day"></div>
+
+      <a href="index.html">
+        <img src="pics/back.png" class="back" alt="back"></a>
+
+    <div class="bubble1">
+</div>
+<div class="bubble2">
+</div>
+<div class="bubble3">
+</div>
+<div class="bubble4">
+</div>
+<div class="bubble5">
+</div>
+<div class="bubble6">
+</div>
+<div class="bubble7">
+</div>
+<div class="bubble8">
+</div>
+<div class="bubble9">
+</div>
+<div class="bubble10">
+</div>
+<div class="bubble11">
+</div>
+
+<div class="container">
+
+
+          <div class="titleTop">
+            <span>zero silence</span>
+      </div>
+  <div class="line"></div>
+  </div>
+
+<div class="song1">
+  <h1>untitled</h1>
+  <h2>by mk.gee</h2>
+<a href="mkgee.html">  <img src="pics/mkgee.jpg" alt="mansnamed mkgeeeeee"></a>
+</div>
+
+<div class="song2">
+  <h1>something cosmic</h1>
+  <h2>by riz la vie</h2>
+  <a href="riz.html"><img src="pics/riz.jpg" alt="boobs oops"> </a>
+</div>
+
+<div class="song3">
+  <h1>lost man</h1>
+  <h2>by jim-e stack</h2>
+<a href="jim.html">  <img src="pics/jim.jpg" alt="boobs oops"></a>
+</div>
+
+<div class="song4">
+  <h1>cowpoke</h1>
+  <h2>by colter wall</h2>
+  <a href="colter.html"> <img src="pics/colter.jpg" alt="boobs oops"> </a>
+</div>
+
+<div class="song5">
+  <h1>shots fired</h1>
+  <h2>by megan thee stallion</h2>
+  <a href="meg.html"><img src="pics/meg.jpg" alt="boobs oops"></a>
+</div>
+
+<div class="song6">
+  <h1>politics & violence</h1>
+  <h2>by dominic fike</h2>
+  <a href="dom.html"><img src="pics/dom.jpg" alt="boobs oops"></a>
+</div>
+
+<div class="song7">
+  <h1>delete forever</h1>
+  <h2>by grimes</h2>
+  <a href="grimes.html"><img src="pics/grimes.png" alt="boobs oops"> </a>
+</div>
+
+<div class="song8">
+  <h1>Trust Issues</h1>
+  <h2>by rico nasty</h2>
+  <a href="rico.html"> <img src="pics/rico.jpg" alt="boobs oops"> </a>
+</div>
+
+<div class="song9">
+  <h1>94 bentley</h1>
+  <h2>by saint jhn</h2>
+<a href="jhn.html">  <img src="pics/jhn.jpg" alt="boobs oops"></a>
+</div>
+
+<div class="song10">
+  <h1>feel it</h1>
+  <h2>by octavian</h2>
+<a href="octavian.html">  <img src="pics/octavian.jpg" alt="boobs oops">
+</div>
+
+
+<div class="foot">
+<span>designed by katie o'brien</span>
+</div>
+</div>
+<div id="pop-up-overlay">
+     <div id="pop-up">
+       <h1>hello</h1>
+       <h3>Here are some of my favorite songs. Click on the album to explore the artist, the song, and more. Thanks for visiting!!</h5>
+       <button>Close</button>
+     </div>
+   </div>
+  </body>
+  <script type="text/javascript">
+
+  var d = new Date();
+ var weekday = new Array(7);
+ weekday[0] = "Sunday";
+ weekday[1] = "Monday";
+ weekday[2] = "Tuesday";
+ weekday[3] = "Wednesday";
+ weekday[4] = "Thursday";
+ weekday[5] = "Friday";
+ weekday[6] = "Saturday";
+
+ var n = weekday[d.getDay()];
+ document.getElementById("day").innerHTML = n;
+
+  function checkTime(i) {
+if (i < 10) {
+  i = "0" + i;
+}
+return i;
+}
+
+
+function startTime() {
+var today = new Date();
+var h = today.getHours();
+var m = today.getMinutes();
+var s = today.getSeconds();
+// add a zero in front of numbers<10
+m = checkTime(m);
+s = checkTime(s);
+document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+t = setTimeout(function() {
+  startTime()
+}, 500);
+}
+startTime();
+
+
+
+  </script>
+
+</html>

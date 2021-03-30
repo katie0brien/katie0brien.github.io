@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>KO | Project 2</title>
+    <link rel="icon" href="pics/neptune.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="entire">
+  <div id="time"></div>
+  <div id="day"></div>
+    <div class="container">
+
+
+          <div class="titleTop">
+            <span>Project</span>
+      </div>
+      <div class="face">
+    <img src="pics/katie.jpeg" alt="myFACE">
+          </div>
+      <div class="titleBottom">
+          <span>two</span>
+      </div>
+      <div class="nameLeft">
+<span>katie</span>
+      </div>
+      <div class="nameRight">
+<span>o'brien</span>
+      </div>
+<a href="trypage2.html"> <button type="button" class="btn-21"> here </button></a>
+
+    </div>
+
+  </div>
+  <a href="../WebDesign.html">
+  <div class="portfolio">
+  <h1 class="r">  Return  </h1>
+  <h1 class="t"> to </h1>
+  <h1 class="p">  Portfolio </h1>
+  </div></a>
+  </body>
+  <script type="text/javascript">
+
+  var d = new Date();
+ var weekday = new Array(7);
+ weekday[0] = "Sunday";
+ weekday[1] = "Monday";
+ weekday[2] = "Tuesday";
+ weekday[3] = "Wednesday";
+ weekday[4] = "Thursday";
+ weekday[5] = "Friday";
+ weekday[6] = "Saturday";
+
+ var n = weekday[d.getDay()];
+ document.getElementById("day").innerHTML = n;
+
+  function checkTime(i) {
+if (i < 10) {
+  i = "0" + i;
+}
+return i;
+}
+
+
+function startTime() {
+var today = new Date();
+var h = today.getHours();
+var m = today.getMinutes();
+var s = today.getSeconds();
+// add a zero in front of numbers<10
+m = checkTime(m);
+s = checkTime(s);
+document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+t = setTimeout(function() {
+  startTime()
+}, 500);
+}
+startTime();
+  </script>
+</html>
